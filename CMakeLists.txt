@@ -3,7 +3,10 @@ project(Life_Simulation)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(Life_Simulation main.cpp)
+add_executable(Life_Simulation main.cpp
+        src/Simulation.hpp
+        src/Entity.hpp
+        libs/NEAT/src/NEAT/RNG.cpp)
 
 set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 
@@ -20,6 +23,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(raygui)
 
-# On lie (link) Raylib à ton exécutable
 target_link_libraries(${PROJECT_NAME} PRIVATE raylib)
 target_include_directories(${PROJECT_NAME} PRIVATE ${raygui_SOURCE_DIR}/src)
+target_include_directories(Life_Simulation PRIVATE libs/NEAT/src)
+

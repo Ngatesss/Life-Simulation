@@ -1,0 +1,4 @@
+[submodule "libs/NEAT"]
+	path = libs/NEAT
+	url = https://github.com/Ngatesss/NEAT.git
+	branch = Hopfield
